@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact us - Edits hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d0d0d;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff0080, #7928ca);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+        header img {
+      max-width: 100px;
+      display: block;
+      margin: auto;
+      border-radius: 10px;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    .contact-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+      gap: 40px;
+    }
+
+    .contact-info {
+      flex: 1;
+    }
+
+    .contact-info h1 {
+      color: #ffcc00;
+    }
+
+    .contact-info h2 {
+      margin: 15px 0;
+      font-weight: normal;
+    }
+
+    .contact-form {
+      flex: 1;
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    }
+
+    .contact-form h1 {
+      margin-bottom: 20px;
+      color: #ffcc00;
+      text-align: center;
+    }
+
+    .contact-form input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      background: #111;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .contact-form input:focus {
+      box-shadow: 0 0 8px #ff0080;
+    }
+
+    .contact-form input[type="button"] {
+      background: linear-gradient(90deg, #ff0080, #7928ca);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .contact-form input[type="button"]:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      color: #aaa;
+      font-size: 0.9rem;
+      border-top: 1px solid #333;
+    }
+
+    @media(max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Edits Hub - Frames by Lokesh</h1>
+    <img src="Logo LY.jpg" alt="Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="Contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <div class="contact-container">
+    <!-- Left Side -->
+    <div class="contact-info">
+      <h1>Get in Touch with us !!</h1>
+      <h2>Contact No. - +916378972602   </h2>
+      <h2>E-mail - lokeshahir975@gmail.com</h2>
+      <h2>Instagram - @frame_sbylokesh</h2>
+      <h2><Address>Address - Gujar ki thadi,Jaipur,Rajasthan</Address></h2>
+    </div>
+
+    <!-- Right Side -->
+    <div class="contact-form">
+      <h1>Contact Us</h1>
+      <input type="text" placeholder="Name here">
+      <input type="tel" placeholder="Contact no. here">
+      <input type="email" placeholder="Email here (Optional)">
+      <input type="button" value="Submit" onclick="location.href='index.html'">
+    </div>
+  </div>
+
+  <footer>@ 2025 Edits hub all rights reserved.</footer>
+</body>
+</html>

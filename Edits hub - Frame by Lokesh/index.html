@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edits Hub - Frames by Lokesh</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d0d0d;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff0080, #7928ca);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+    }
+
+    header img {
+      max-width: 100px;
+      display: block;
+      margin: auto;
+      border-radius: 10px;
+    }
+
+    header h1 {
+      margin: 10px 0;
+      font-size: 2rem;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    h2 {
+      margin: 40px 20px 20px;
+      color: #ffcc00;
+    }
+
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+      scroll-behavior: smooth;
+      cursor: grab;
+    }
+
+    .scroll-container:active {
+      cursor: grabbing;
+    }
+
+    .scroll-container img,
+    .scroll-container video {
+      flex: 0 0 auto;
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .scroll-container img:hover,
+    .scroll-container video:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      color: #aaa;
+      font-size: 0.9rem;
+      border-top: 1px solid #333;
+    }
+
+    /* Fullscreen modal */
+    .modal {
+      display: none; 
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.9);
+    }
+
+    .modal span {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Logo LY.jpg" alt="Logo">
+    <h1>Edits Hub - Frames by Lokesh</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="Contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <h2>Our Graphic Designing Work -</h2>
+  <div class="scroll-container" id="image-scroll">
+    <img src="Image 1.jpg" alt="Work 1">
+    <img src="Image 2.jpg" alt="Work 2">
+    <img src="Image 3.jpg" alt="Work 3">
+    <img src="Image 4.jpg" alt="Work 4">
+    <img src="Image 5.jpg" alt="Work 5">
+  </div>
+
+  <h2>Our Editing Work -</h2>
+  <div class="scroll-container" id="video-scroll">
+    <video controls src="Video 1.mp4"></video>
+  </div>
+
+  <footer>@ 2025 Edits hub all rights reserved</footer>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal">
+    <span id="closeModal">&times;</span>
+    <img id="modalImg" src="">
+  </div>
+
+  <script>
+    // Enable click-drag scrolling
+    function enableDragScroll(containerId) {
+      const container = document.getElementById(containerId);
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      container.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+      });
+      container.addEventListener('mouseleave', () => isDown = false);
+      container.addEventListener('mouseup', () => isDown = false);
+      container.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX) * 2; 
+        container.scrollLeft = scrollLeft - walk;
+      });
+    }
+
+    enableDragScroll('image-scroll');
+    enableDragScroll('video-scroll');
+
+    // Image modal logic
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeModal = document.getElementById("closeModal");
+
+    document.querySelectorAll('#image-scroll img').forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+      });
+    });
+
+    closeModal.onclick = () => {
+      modal.style.display = "none";
+    }
+
+    modal.onclick = (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
